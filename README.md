@@ -1,3 +1,3 @@
 # Passoword Generator
 
-Esse é um projeto desenvolvido em javascript com o intuído de praticar tando design quando programação. A aplicação é um gerador de senhas randômicos.
+Este é um projeto desenvolvido em JavaScript com o intuito de praticar tanto design quanto programação. A aplicação consiste em um gerador de senhas randômicas.
