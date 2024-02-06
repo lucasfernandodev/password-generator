@@ -1,0 +1,235 @@
+html,body{
+  height: 100%;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background: var(--app-background);
+  width: 100%;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  color: var(--text-color);
+}
+
+body, button, input{
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+.main{
+  width: calc(100% - 32px);
+  max-width: 936px;
+  padding: 42px 64px 64px 64px;
+  background-color: var(--main-background);
+  border-radius: 4px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px
+}
+
+.form__header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px
+}
+
+.form__header .title{
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.form__header .description{
+  line-height: 180%;
+  max-width: min(100%, 600px);
+}
+
+.form__fieldset{
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.form__fieldset input,
+.form__fieldset .button-copy{
+  height: 48px;
+}
+
+.form__fieldset .input-field{
+  position: relative;
+  width: 100%;
+}
+
+.form__fieldset .input-field input{
+  width: min(800px, 100%);
+  padding: 16px;
+  background: var(--input-background);
+  border: 1px solid var(--input-background);
+  color: var(--text-color);
+  cursor: default;
+  border-radius: 4px;
+}
+
+.form__fieldset .input-field input::placeholder{
+  font-size: 1.3rem;
+  letter-spacing: 0.16rem;
+}
+
+.form__fieldset .input-field input:focus{
+  border: 1px solid var(--input-background);
+  outline: 1px solid var(--primary-hover);
+}
+
+.form__fieldset .input-field .button-copy{
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  height: 100%;
+  width: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 0px 4px 4px 0px;
+}
+
+.form__fieldset .input-field .button-copy svg{
+  width: 20px;
+  height: 20px;
+  stroke: var(--gray);
+  transition: 250ms linear;
+}
+
+.form__fieldset .input-field .button-copy:hover svg{
+  stroke: var(--text-color);
+}
+
+.form__fieldset .button-submit{
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--text-color);
+  font-weight: bold;
+  min-width: 200px;
+  cursor: pointer;
+  transition: 250ms linear;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  letter-spacing: 0.12rem;
+}
+
+.form__fieldset .button-submit:hover{
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #fff;
+}
+
+/* OPTIONS */
+
+.form__filter{
+  width: 100%;
+  display: flex;
+}
+
+.form__filter .col{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: fit-content;
+}
+
+.form__filter .col:last-child{
+  align-items: flex-end;
+}
+
+.form__filter .filter__opt{
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.form__filter .filter__opt #pass-length{
+  width: 50px;
+  height: 34px;
+  border-radius: 4px;
+  background: var(--input-number-background);
+  border: none;
+  -moz-appearance: textfield;
+  color: var(--text-color);
+  text-align: center;
+  font-weight: bold;
+}
+
+.form__filter .filter__opt #pass-length:focus{
+  outline: 1px solid var(--primary-hover);
+}
+
+.form__filter .filter__opt input[type=checkbox]{
+  opacity: 0;
+}
+
+
+
+.checkbox{
+  background: var(--input-number-background);
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid var(--input-number-background);
+  overflow: hidden;
+}
+
+.checkbox input{
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.checkbox:has(input:checked)::before{
+  content: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 3.5L4 6L9 1' stroke='%23EEEEEF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox:has(input:active){
+  box-shadow: 0 0 6px var(--primary-checkbox-shadow);
+}
+
+.checkbox:has(input:checked){
+  background: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+
+
+/* Autor Link */
+
+.footer a{
+  color: var(--author-color);
+  font-weight: bold;
+  text-underline-offset: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer a svg{
+  transition: transform 250ms linear;
+}
+
+.footer a:hover svg{
+  transform: translateX(4px);
+}

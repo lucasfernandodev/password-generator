@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de senhas!</title>
+  <link rel="shortcut icon" href="./assets/image/favicon.svg" type="image/svg">
+  <link rel="stylesheet" href="./assets/css/root.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <main class="main">
+    <form class="form">
+      <header class="form__header">
+        <h1 class="title">Gerador de senhas!</h1>
+        <p class="description">
+          Proteja suas contas online com confiança usando nosso gerador de senhas. Crie combinações únicas em segundos
+          para reforçar a segurança digital.
+        </p>
+      </header>
+      <fieldset class="form__fieldset">
+        <div class="input-field">
+          <input type="text" placeholder="Senha" readonly="readonly">
+          <button type="button" class="button-copy" aria-label="Copiar senha gerada!">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="44" height="44"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+              <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+            </svg>
+          </button>
+        </div>
+        <button type="submit" class="button-submit">Gerar senha</button>
+      </fieldset>
+      <div class="form__filter">
+        <ul class="col">
+          <li class="filter__opt">
+            <label for="pass-length">Números de caracteres da senha</label>
+            <input id="pass-length" type="number" value="16" placeholder="16" />
+          </li>
+          <li class="filter__opt">
+            <label for="pass-allow-number">Permitir números</label>
+            <div class="checkbox"><input type="checkbox" name="" id="pass-allow-number" /></div>
+          </li>
+          <li class="filter__opt">
+            <label for="pass-allow-uppercase">Permitir letras maiúscula</label>
+            <div class="checkbox"><input type="checkbox" name="" id="pass-allow-uppercase" /></div>
+            
+          </li>
+        </ul>
+        <ul class="col">
+          <li class="filter__opt">
+            <label for="pass-allow-lowercase">Permitir letra minúscula</label>
+            <div class="checkbox"><input type="checkbox" name="" id="pass-allow-lowercase" /></div>
+          </li>
+          </li>
+          <li class="filter__opt">
+            <label for="pass-allow-symbol">Permitir símbolos</label>
+            <div class="checkbox"><input type="checkbox" name="" id="pass-allow-symbol" /></div>
+          </li>
+          <li class="filter__opt">
+            <label for="pass-allow-duplicate">Permitir duplicados</label>
+            <div class="checkbox"><input type="checkbox" name="" id="pass-allow-duplicate" /></div>
+          </li>
+
+        </ul>
+      </div>
+    </form>
+  </main>
+  <footer class="footer">
+    <a href="#">
+      <span>Conhecer Autor</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+    </a>
+  </footer>
+</body>
+
+</html>
