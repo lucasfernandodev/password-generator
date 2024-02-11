@@ -7,7 +7,7 @@ html{
 }
 
 body{
-  background: var(--app-background);
+  background: linear-gradient(to bottom right, hsl(276, 5%, 60%), hsl(266,100%,64%));
   width: 100%;
   font-size: 1.6rem;
   display: flex;
@@ -15,7 +15,7 @@ body{
   justify-content: center;
   align-items: center;
   gap: 32px;
-  color: var(--text-color);
+  color: #fff;
 }
 
 body, button, input{
@@ -26,15 +26,31 @@ body, button, input{
   width: calc(100% - 32px);
   max-width: 936px;
   padding: 42px 64px 64px 64px;
-  background-color: var(--main-background);
+  background-color: hsla(240, 27%, 63%, 25%);
   border-radius: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.main::after{
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  background: hsla(240, 20%, 20%, 25%);
 }
 
 .form{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px
+  gap: 24px;
+  position: relative;
+  z-index: 10;
 }
 
 .form__header{
@@ -61,7 +77,9 @@ body, button, input{
   width: 100%;
 }
 
-.form__fieldset input,
+
+/* Display Input */
+.form__fieldset .display,
 .form__fieldset .button-copy{
   height: 48px;
 }
@@ -71,27 +89,31 @@ body, button, input{
   width: 100%;
 }
 
-.form__fieldset .input-field input{
+.form__fieldset .display{
   width: min(800px, 100%);
   padding: 16px;
   background: var(--input-background);
-  border: 1px solid var(--input-background);
-  color: var(--text-color);
+  border: 1px solid hsla(0, 0%, 100%, 15%);
+  color: var(--white);
   cursor: default;
   border-radius: 4px;
+  letter-spacing: 5px;
+  font-size: 16px;
+  overflow: hidden;
+  padding-right: 40px;
 }
 
-.form__fieldset .input-field input::placeholder{
+.form__fieldset .display::placeholder{
   font-size: 1.3rem;
   letter-spacing: 0.16rem;
+  color: #fff;
 }
 
-.form__fieldset .input-field input:focus{
-  border: 1px solid var(--input-background);
-  outline: 1px solid var(--primary-hover);
+.form__fieldset .display:focus{
+  outline: none;
 }
 
-.form__fieldset .input-field .button-copy{
+.form__fieldset .button-copy{
   position: absolute;
   right: 0px;
   cursor: pointer;
@@ -102,21 +124,26 @@ body, button, input{
   border-radius: 0px 4px 4px 0px;
 }
 
-.form__fieldset .input-field .button-copy svg{
+.form__fieldset .button-copy svg{
   width: 20px;
   height: 20px;
   stroke: var(--gray);
   transition: 250ms linear;
 }
 
-.form__fieldset .input-field .button-copy:hover svg{
-  stroke: var(--text-color);
+.form__fieldset .button-copy:hover svg{
+  stroke: #fff;
 }
+
+/* </ Display Input */
+
+
+
 
 .form__fieldset .button-submit{
   background: var(--primary);
   border: 1px solid var(--primary);
-  color: var(--text-color);
+  color: #fff;
   font-weight: bold;
   min-width: 200px;
   cursor: pointer;
@@ -132,11 +159,21 @@ body, button, input{
   color: #fff;
 }
 
-/* OPTIONS */
+.form__fieldset .button-submit:disabled{
+  background-color: #6C6C93;
+  border: 1px solid #6C6C93;
+  cursor: default;
+  color: #aaa;
+}
 
+
+/* OPTIONS */
 .form__filter{
   width: 100%;
   display: flex;
+  background: var(--input-background);
+  padding: 24px;
+  border-radius: 4px;
 }
 
 .form__filter .col{
@@ -164,14 +201,25 @@ body, button, input{
   border-radius: 4px;
   background: var(--input-number-background);
   border: none;
-  -moz-appearance: textfield;
-  color: var(--text-color);
+  color: #fff;
   text-align: center;
   font-weight: bold;
 }
 
 .form__filter .filter__opt #pass-length:focus{
-  outline: 1px solid var(--primary-hover);
+  outline: 1px solid hsla(0, 0%, 100%, 15%);
+}
+
+/* Removing Arrow of number input in Chrome, Safari, Edge, Opera */
+.form__filter .filter__opt #pass-length::-webkit-outer-spin-button,
+.form__filter .filter__opt #pass-length::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Removing Arrow of number input in Firefox */
+.form__filter .filter__opt #pass-length[type=number] {
+  -moz-appearance: textfield;
 }
 
 .form__filter .filter__opt input[type=checkbox]{
@@ -188,6 +236,7 @@ body, button, input{
   border-radius: 3px;
   border: 1px solid var(--input-number-background);
   overflow: hidden;
+  transition: 250ms linear;
 }
 
 .checkbox input{
@@ -204,8 +253,8 @@ body, button, input{
   transform: translate(-50%, -50%);
 }
 
-.checkbox:has(input:active){
-  box-shadow: 0 0 6px var(--primary-checkbox-shadow);
+.checkbox:has(input:hover){
+  box-shadow: 0 4px 4px var(--primary-checkbox-shadow);
 }
 
 .checkbox:has(input:checked){
@@ -218,7 +267,7 @@ body, button, input{
 /* Autor Link */
 
 .footer a{
-  color: var(--author-color);
+  color: var(--primary);
   font-weight: bold;
   text-underline-offset: 3px;
   display: flex;
