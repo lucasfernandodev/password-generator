@@ -32,6 +32,26 @@ body, button, input{
   z-index: 1;
 }
 
+@media screen and (max-width: 825px){
+  .main{
+    padding: 24px;
+  }
+}
+
+@media screen and (max-width: 450px){
+  html{
+    height: auto;
+  }
+  body{
+    padding: 32px 0px;
+    height: auto;
+  }
+  .main{
+    width: calc(100% - 16px);
+    padding: 32px 16px; 
+  }
+}
+
 .main::after{
   content: "";
   position: absolute;
@@ -153,6 +173,23 @@ body, button, input{
   letter-spacing: 0.12rem;
 }
 
+@media screen and (max-width: 825px){
+  .form__fieldset .button-submit{
+    min-width: 180px;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .form__fieldset{
+    flex-direction: column;
+  }
+  .form__fieldset .button-submit,
+  .form__fieldset .display{
+    width: 100%;
+    height: 48px;
+  }
+}
+
 .form__fieldset .button-submit:hover{
   background-color: var(--primary-hover);
   border-color: var(--primary-hover);
@@ -176,6 +213,12 @@ body, button, input{
   border-radius: 4px;
 }
 
+@media screen and (max-width: 450px){
+  .form__filter{
+    padding: 24px 16px;
+  }
+}
+
 .form__filter .col{
   width: 50%;
   display: flex;
@@ -184,8 +227,13 @@ body, button, input{
   height: fit-content;
 }
 
+.form__filter .col:first-child{
+  min-width: 304px;
+}
+
 .form__filter .col:last-child{
   align-items: flex-end;
+  flex-shrink: 1;
 }
 
 .form__filter .filter__opt{
@@ -195,6 +243,33 @@ body, button, input{
   gap: 16px;
 }
 
+@media screen and (max-width: 660px){
+  .form__filter{
+    flex-direction: column;
+  }
+
+  .form__filter .col{
+    width: 100%;
+    justify-content: flex-start;
+
+  }
+
+  .form__filter .col:last-child{
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .form__filter .filter__opt{
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 440px){
+  .form__filter .col:first-child{
+    min-width: unset;
+  }
+}
 .form__filter .filter__opt #pass-length{
   width: 50px;
   height: 34px;
