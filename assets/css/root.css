@@ -56,19 +56,19 @@ table {
 :root{
 	--white: #fff;
 
-	--primary: #22223B;
-	--primary-hover: #323257;
+	--primary: #242424;
+	--primary-hover: #323232;
 	
-	--primary-checkbox-shadow: hsl(240, 14%, 35%);
+	--primary-checkbox-shadow: #101010;
 
 	--gray: #888888;
 	--gray-dark:hsl(0, 0%, 20%);
 
 	--text-color: hsl(240, 3%, 94%);
 
-	--input-background: hsla(240, 14%, 35%,50%);
+	--input-background: #1f1f1f;
 	--input-outline: var(--gray-dark);
-	--input-number-background: hsl(240, 14%, 35%);
+	--input-number-background: #1a1a1a;
 }
 
 .tooltip{
